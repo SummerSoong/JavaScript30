@@ -18,28 +18,69 @@
     }
 
     // Regular
+    console.log('hello');
 
     // Interpolated
+    const name = "lalal"
+    console.log('hello I am a %s string!', 'lalal');
+    console.log(`hello I am a ${name}`);
 
     // Styled
+    console.log('%c I am awsome!', 'font-size: 50px; background:red');
 
     // warning!
+    console.warn('Warning!!!');
 
     // Error :|
+    console.error('Error!!!');
 
     // Info
+    console.info('this is info');
 
     // Testing
+    console.assert(1===1, 'wrong')
+    console.assert(1===2, 'wrong')
+
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'you did not select the right element')
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
 
+    console.clear();
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.groupEnd(`${dog.name}`);
+    })
+
 
     // counting
+    console.count("wes")
+    console.count("wes")
+    console.count("Steve")
+    console.count("wes")
+    console.count("wes")
+    console.count("Steve")
+    console.count("Steve")
+    console.count("Steve")
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/SummerSoong')
+    .then(data => data.json())
+    .then(data => {
+      console.timeEnd('fetching data');
+      console.log(data);
+    })
+
+    console.table(dogs)
 
   </script>
 </body>
