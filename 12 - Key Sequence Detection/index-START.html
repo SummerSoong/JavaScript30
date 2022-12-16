@@ -7,6 +7,15 @@
 </head>
 <body>
 <script>
+  const press = [];
+  const secret = "loveyoga";//secret.length = 8
+  window.addEventListener('keyup', (e) => {
+    press.push(e.key)
+    press.splice(-secret.length - 1, press.length - secret.length)
+    if (press.join('').includes(secret)) {
+      cornify_add();
+    }
+  })
 </script>
 </body>
 </html>
